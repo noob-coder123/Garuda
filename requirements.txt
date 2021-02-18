@@ -1,0 +1,4 @@
+phonenumbers>=8.12.17
+colorama>=0.4.3
+google>=2.0.3
+requests>=2.23.0
