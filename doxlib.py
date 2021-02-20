@@ -78,7 +78,7 @@ def g_search(query):
     if len(lol) == 0:
         print(f'{b}{minus}{r} No results found{g}')
     else:
-        for a in results:
+        for a in lol:
             print(f'{b}{plus}{cy} Retrieved URL: {g}{a}')
 
 
