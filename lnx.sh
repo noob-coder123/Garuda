@@ -1,4 +1,4 @@
-if [ whoami -ne 'root' ]
+if [ "$EUID" -ne 0 ]
 then
   echo "nonroot" > root.txt
 else
