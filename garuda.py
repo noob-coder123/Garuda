@@ -65,7 +65,8 @@ def helpMenu():
     {g}--mail     : {cy}E-Mail Doxing
     {g}--phone    : {cy}Phone number Doxing
     {g}--user     : {cy}Username Doxing
-    {g}--shodan   : {cy}Fetches Shodan search results{rs}
+    {g}--shodan   : {cy}Fetches Shodan search results
+    {g}--google   : {cy}Perform Google search{rs}
     ''')
 '''
 Code Improvements/Suggestions are welcome
@@ -111,14 +112,14 @@ elif arg ==  '--user':
     username = str(input(f'{inp}{cy} Enter Username{g}[Without @]{cy}: {r}'))
     username_doxxer = UserDox(username)
     username_doxxer.web_search()
-    print(f'{info}{cy} Fetching Google Results...{g}')
-    query = '@' + str(username)
-    g_search(query)
     print(f'{plus} Scan Complete')
 elif arg == '--shodan':
     prompt = str(input(f'{inp}{cy} Enter a query to search Shodan: {r}'))
     searcher = Shodan_search(prompt)
     searcher.start()
+elif arg == '--google':
+    q = str(input(f'{inp}{cy} Enter query to search{g}[Google]: {r}'))
+    g_search(q)
 else:
     print(f'{warn}{r} Error: Invalid argument')
     helpMenu()
