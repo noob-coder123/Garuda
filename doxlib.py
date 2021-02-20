@@ -484,7 +484,7 @@ class UserDox:
 # -----------------------------------------------------------------------------------------------------
 
 class Shodan_search:
-    """Searches vulnerable devices using shodan API"""
+    """Searches devices on the internet using shodan API"""
     def __init__(self, query):
         self.query = query
 
