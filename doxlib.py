@@ -333,8 +333,8 @@ class Ipdox:
     def start_Ip_doxing(self):
         #api = '3d3aa7b39b504b0992df337b4ac74801'
         try:
-            with open('geolocation.dat', 'rb') as f:
-                api = pickle.load(f)
+            with open('core\\geolocation.dat', 'rb') as f:
+                api = p.load(f)
         except:
             print(f'{b}{warn}{r} No Geolocation.io API. Run setup.py to store one')
             exit()
@@ -490,8 +490,8 @@ class Shodan_search:
 
     def start(self):
         try:
-            with open('shodan.dat', 'rb') as f:
-                api = pickle.load(f)
+            with open('core\\shodan.dat', 'rb') as f:
+                api = p.load(f)
         except:
             print(f'{b}{warn}{r} No Shodan API. Run setup.py to store one')
             exit()
@@ -501,9 +501,9 @@ class Shodan_search:
         try:
             results = sapi.search(self.query)
             for result in results['matches']:
-                rlist.append([str(result['str_ip']), str(result['port'])])
+                rlist.append([str(result['ip_str']), str(result['port'])])
             if not len(rlist) == 0:
-                for a in rlist:
+                for a in rlist[:100]:
                     print(f'{b}{plus} Retrieved :: {cy}IP : {w}{a[0]} {g}| {cy}Port : {w}{a[1]}')
                     sleep(1)
             else:
